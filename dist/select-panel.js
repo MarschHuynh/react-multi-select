@@ -162,7 +162,9 @@ var SelectPanel = function (_Component) {
                 selectAllLabel = _props3.selectAllLabel,
                 disabled = _props3.disabled,
                 disableSearch = _props3.disableSearch,
-                hasSelectAll = _props3.hasSelectAll;
+                hasSelectAll = _props3.hasSelectAll,
+                itemContainerStyle = _props3.itemContainerStyle,
+                searchBarStyle = _props3.searchBarStyle;
 
 
             var selectAllOption = {
@@ -187,7 +189,7 @@ var SelectPanel = function (_Component) {
                         placeholder: 'Search',
                         type: 'text',
                         onChange: this.handleSearchChange,
-                        style: _extends({}, styles.search, focusedSearchStyle),
+                        style: _extends({}, styles.search, focusedSearchStyle, searchBarStyle),
                         onFocus: function onFocus() {
                             return _this2.handleSearchFocus(true);
                         },
@@ -205,6 +207,7 @@ var SelectPanel = function (_Component) {
                         return _this2.handleItemClicked(0);
                     },
                     ItemRenderer: ItemRenderer,
+                    itemContainerStyle: itemContainerStyle,
                     disabled: disabled
                 }),
                 _react2.default.createElement(_selectList2.default, _extends({}, this.props, {

@@ -137,6 +137,8 @@ class SelectPanel extends Component<Props, State> {
             disabled,
             disableSearch,
             hasSelectAll,
+            itemContainerStyle,
+            searchBarStyle,
         } = this.props;
 
         const selectAllOption = {
@@ -159,7 +161,7 @@ class SelectPanel extends Component<Props, State> {
                     placeholder="Search"
                     type="text"
                     onChange={this.handleSearchChange}
-                    style={{...styles.search, ...focusedSearchStyle}}
+                    style={{...styles.search, ...focusedSearchStyle, ...searchBarStyle}}
                     onFocus={() => this.handleSearchFocus(true)}
                     onBlur={() => this.handleSearchFocus(false)}
                 />
@@ -173,6 +175,7 @@ class SelectPanel extends Component<Props, State> {
                   onSelectionChanged={this.selectAllChanged}
                   onClick={() => this.handleItemClicked(0)}
                   ItemRenderer={ItemRenderer}
+                  itemContainerStyle={itemContainerStyle}
                   disabled={disabled}
               />
             }
