@@ -143,4 +143,4 @@ const styles = {
 };
 
 export default MultiSelect;
-export {Dropdown};
+export { Dropdown, SelectPanel };

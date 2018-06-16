@@ -240,7 +240,7 @@ var SelectItem = function (_Component2) {
                     "aria-selected": checked,
                     selected: checked,
                     tabIndex: "-1",
-                    style: _extends({}, styles.itemContainer, focusStyle),
+                    style: _extends({}, styles.itemContainer, focusStyle, this.props.itemContainerStyle),
                     ref: function ref(_ref2) {
                         return _this3.itemRef = _ref2;
                     },
@@ -919,7 +919,7 @@ exports.default = SelectPanel;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Dropdown = undefined;
+exports.SelectPanel = exports.Dropdown = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1104,6 +1104,7 @@ var styles = {
 
 exports.default = MultiSelect;
 exports.Dropdown = _dropdown2.default;
+exports.SelectPanel = _selectPanel2.default;
 
 /***/ }),
 /* 5 */
@@ -1301,7 +1302,8 @@ var SelectList = function (_Component) {
                 selected = _props.selected,
                 focusIndex = _props.focusIndex,
                 onClick = _props.onClick,
-                disabled = _props.disabled;
+                disabled = _props.disabled,
+                itemContainerStyle = _props.itemContainerStyle;
 
 
             return options.map(function (o, i) {
@@ -1310,6 +1312,7 @@ var SelectList = function (_Component) {
                     { style: styles.listItem, key: i },
                     _react2.default.createElement(_selectItem2.default, {
                         focused: focusIndex === i,
+                        itemContainerStyle: itemContainerStyle,
                         option: o,
                         onSelectionChanged: function onSelectionChanged(c) {
                             return _this2.handleSelectionChanged(o, c);

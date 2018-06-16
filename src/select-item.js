@@ -128,7 +128,7 @@ class SelectItem extends Component<SelectItemProps, SelectItemState> {
             aria-selected={checked}
             selected={checked}
             tabIndex="-1"
-            style={{...styles.itemContainer, ...focusStyle}}
+            style={{...styles.itemContainer, ...focusStyle, ...this.props.itemContainerStyle}}
             ref={ref => this.itemRef = ref}
             onKeyDown={this.handleKeyDown}
             onMouseOver={() => this.setState({hovered: true})}

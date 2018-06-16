@@ -48,12 +48,14 @@ class SelectList extends Component<Props> {
             focusIndex,
             onClick,
             disabled,
+            itemContainerStyle,
         } = this.props;
 
         return options.map((o, i) =>
             <li style={styles.listItem} key={i}>
                 <SelectItem
                     focused={focusIndex === i}
+                    itemContainerStyle={itemContainerStyle}
                     option={o}
                     onSelectionChanged={c => this.handleSelectionChanged(o, c)}
                     checked={selected.includes(o.value)}

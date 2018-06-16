@@ -161,7 +161,7 @@ var SelectItem = function (_Component2) {
                     "aria-selected": checked,
                     selected: checked,
                     tabIndex: "-1",
-                    style: _extends({}, styles.itemContainer, focusStyle),
+                    style: _extends({}, styles.itemContainer, focusStyle, this.props.itemContainerStyle),
                     ref: function ref(_ref2) {
                         return _this3.itemRef = _ref2;
                     },

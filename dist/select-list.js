@@ -74,7 +74,8 @@ var SelectList = function (_Component) {
                 selected = _props.selected,
                 focusIndex = _props.focusIndex,
                 onClick = _props.onClick,
-                disabled = _props.disabled;
+                disabled = _props.disabled,
+                itemContainerStyle = _props.itemContainerStyle;
 
 
             return options.map(function (o, i) {
@@ -83,6 +84,7 @@ var SelectList = function (_Component) {
                     { style: styles.listItem, key: i },
                     _react2.default.createElement(_selectItem2.default, {
                         focused: focusIndex === i,
+                        itemContainerStyle: itemContainerStyle,
                         option: o,
                         onSelectionChanged: function onSelectionChanged(c) {
                             return _this2.handleSelectionChanged(o, c);
